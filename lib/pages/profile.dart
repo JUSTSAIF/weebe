@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:weebe/widgets/bottomNav.dart';
+import 'package:weebe/widgets/fieldView.dart';
 import 'package:weebe/widgets/sideMenu.dart';
 
 class Profile extends StatefulWidget {
@@ -27,8 +28,20 @@ class _ProfileState extends State<Profile> {
               children: [
                 Column(
                   children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Icon(Icons.edit, color: Colors.white),
+                        style: ElevatedButton.styleFrom(
+                          shape: CircleBorder(),
+                          primary: Colors.blue,
+                          onPrimary: Colors.red,
+                        ),
+                      ),
+                    ),
                     SizedBox(
-                      height: 60,
+                      height: 40,
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(80),
@@ -51,7 +64,47 @@ class _ProfileState extends State<Profile> {
                     SizedBox(
                       height: 30,
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 15, right: 15),
+                      child: Container(
+                        color: Colors.white,
+                        height: 0.4,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
                   ],
+                ),
+                fieldView(content: '@justsaif', label: 'اسم المستخدم'),
+                SizedBox(
+                  height: 20,
+                ),
+                fieldView(
+                    content: 'justsaif@gmail.com', label: 'ألبريد الالكتروني'),
+                SizedBox(
+                  height: 20,
+                ),
+                fieldView(
+                  content: '2021/7/22 3:48 AM',
+                  label: 'تاريخ التسجيل',
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 10, top: 20, bottom: 10),
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Delete Account',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: HexColor('#FF5A5A'),
+                        onPrimary: Colors.red,
+                      ),
+                    ),
+                  ),
                 )
               ],
             ),

@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-Widget field(TextEditingController controller, IconData ico,
-    {String hintText = ""}) {
+Widget field(TextEditingController controller,
+    {IconData? ico, String hintText = "", bool enabled = true}) {
   return Padding(
     padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
     child: TextField(
@@ -22,6 +21,7 @@ Widget field(TextEditingController controller, IconData ico,
           size: 26,
           color: HexColor('#142831'),
         ),
+        enabled: enabled,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(11),
           borderSide: BorderSide(color: Colors.transparent),
@@ -31,10 +31,11 @@ Widget field(TextEditingController controller, IconData ico,
           borderSide: BorderSide(color: Colors.transparent),
         ),
         hintStyle: TextStyle(
-            color: HexColor('#142831'),
-            fontFamily: 'Cairo',
-            fontWeight: FontWeight.bold,
-            height: 1),
+          color: HexColor('#142831'),
+          fontFamily: 'Cairo',
+          fontWeight: FontWeight.bold,
+          // height: 1
+        ),
         hintText: hintText,
       ),
     ),

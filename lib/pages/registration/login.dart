@@ -72,8 +72,9 @@ class _LoginState extends State<Login> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      field(email, Icons.person, hintText: 'Email / Username'),
-                      field(password, Icons.vpn_key, hintText: 'Password'),
+                      field(email,
+                          ico: Icons.person, hintText: 'Email / Username'),
+                      field(password, ico: Icons.vpn_key, hintText: 'Password'),
                       Padding(
                         padding: EdgeInsets.only(left: 10, right: 10),
                         child: mainButton(
