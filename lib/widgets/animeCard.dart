@@ -61,11 +61,11 @@ class AnimeCard extends StatelessWidget {
                 )),
             Expanded(
               child: Image(
-                image: AssetImage("assets/testPro.gif"),
-                fit: BoxFit.contain,
+                height: 110,
+                // image: AssetImage("assets/testPro.gif"),
+                image: AssetImage("assets/sec_3.jpg"),
+                fit: BoxFit.cover,
                 alignment: Alignment.centerRight,
-                // height: 110,
-                // width: 110,
               ),
             )
           ],
