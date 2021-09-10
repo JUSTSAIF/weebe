@@ -4,17 +4,23 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:weebe/bindings/rootBinding.dart';
 import 'package:weebe/pages/home.dart';
 import 'package:weebe/pages/networkErr.dart';
+import 'package:weebe/pages/play.dart';
 import 'package:weebe/pages/search.dart';
 import 'package:weebe/pages/profile.dart';
 import 'package:weebe/pages/registration/login.dart';
 import 'package:weebe/pages/registration/register.dart';
 import 'package:weebe/pages/registration/welcome.dart';
 import 'package:weebe/pages/sections.dart';
-import 'dart:io';
+import 'package:flutter/services.dart';
 
-void main() async {
+void main() {
+  // Disable Landscape mode
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
   runApp(GetMaterialApp(
-    initialRoute: '/home',
+    initialRoute: '/welcome',
     initialBinding: RootBinding(),
     theme: new ThemeData(scaffoldBackgroundColor: HexColor('#111111')),
     getPages: [
@@ -26,6 +32,7 @@ void main() async {
       GetPage(name: '/profile', page: () => Profile()),
       GetPage(name: '/moviesSec', page: () => Search()),
       GetPage(name: '/seriesSec', page: () => Sections()),
+      GetPage(name: '/play', page: () => Play()),
     ],
   ));
 }

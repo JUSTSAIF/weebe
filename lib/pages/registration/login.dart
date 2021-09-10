@@ -78,6 +78,7 @@ class _LoginState extends State<Login> {
                       Padding(
                         padding: EdgeInsets.only(left: 10, right: 10),
                         child: mainButton(
+                            action: () => Get.offAllNamed('/home'),
                             content: 'دخول',
                             bgColor: HexColor('#142831'),
                             circular: true,

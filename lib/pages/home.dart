@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:weebe/widgets/homeSection.dart';
 import 'package:weebe/widgets/myAppbar.dart';
@@ -54,7 +56,7 @@ class _HomeState extends State<Home> {
               child: ImageSlideshow(
                 width: double.infinity,
                 height: 180,
-                initialPage: 0,
+                initialPage: 3,
                 indicatorColor: Colors.blue,
                 indicatorBackgroundColor: Colors.grey,
                 children: favList
@@ -63,7 +65,7 @@ class _HomeState extends State<Home> {
                           decoration: BoxDecoration(
                               image: DecorationImage(
                             scale: 1000,
-                            image: NetworkImage(
+                            image: CachedNetworkImageProvider(
                               '${i["image"]}',
                             ),
                             fit: BoxFit.cover,
@@ -71,7 +73,7 @@ class _HomeState extends State<Home> {
                           child: Align(
                             alignment: Alignment.bottomRight,
                             child: TextButton(
-                                onPressed: () => {},
+                                onPressed: () => {Get.toNamed('/play')},
                                 child: Container(
                                   decoration: BoxDecoration(
                                       color: HexColor('##FF4D4D'),
@@ -108,10 +110,16 @@ class _HomeState extends State<Home> {
                 autoPlayInterval: 20000,
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
             // Sections
             homeSection(secTitle: "أفضل 100 انمي"),
             homeSection(secTitle: "ألانميات المميزة"),
             homeSection(secTitle: "انميات الموسم الجديد"),
+            SizedBox(
+              height: 30,
+            ),
           ],
         ));
   }

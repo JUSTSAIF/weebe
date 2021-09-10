@@ -66,7 +66,9 @@ class bottomNav extends StatelessWidget {
               PageTransition(type: PageTransitionType.fade, child: Profile()),
               (route) => false);
           index = 3;
-        } else {}
+        } else {
+          index = 0;
+        }
       },
       letIndexChange: (index) => true,
     );

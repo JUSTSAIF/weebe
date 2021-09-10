@@ -104,7 +104,7 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                           Text(
-                            " لديك حساب ؟",
+                            " لديك حساب ؟ ",
                             style: TextStyle(
                               fontFamily: 'Cairo',
                             ),

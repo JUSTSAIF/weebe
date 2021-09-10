@@ -26,7 +26,7 @@ class SideMenu extends StatelessWidget {
                 height: 15,
               ),
               Text(
-                'ألاوتاكو ألالماني',
+                'TheNullPer',
                 style: TextStyle(
                     color: Colors.white, fontFamily: 'Cairo', fontSize: 20),
               ),

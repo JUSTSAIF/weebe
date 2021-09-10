@@ -1,17 +1,22 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 Widget homeCard(String image,
-    {String name = "Nisekoi", int year = 2021, int imdb = 5}) {
+    {String name = "Nisekoi", int year = 2021, double imdb = 5}) {
   return Padding(
-      padding: EdgeInsets.only(left: 10),
+      padding: EdgeInsets.only(left: 10, right: 10),
       child: SizedBox(
-          width: 80,
+          width: 104,
           child: Column(
             children: [
-              Image(
-                image: NetworkImage(image),
-                height: 121,
-              ),
+              ClipRRect(
+                  borderRadius: BorderRadius.circular(3),
+                  child: CachedNetworkImage(
+                    imageUrl: image,
+                    fit: BoxFit.cover,
+                    width: 104,
+                    height: 150,
+                  )),
               Container(
                 child: Row(
                   children: [
