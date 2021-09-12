@@ -13,12 +13,13 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-
+  TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-      appBar: myAppBar(_key),
+      appBar:
+          myAppBar(_key, isSearching: true, searchController: searchController),
       endDrawer: SideMenu(),
       bottomNavigationBar: bottomNav(pageNum: 1),
       body: Container(

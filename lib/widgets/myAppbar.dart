@@ -3,8 +3,25 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 AppBar myAppBar(_key,
-    {bool dis = false, bool backBu = false, appBarContent = ""}) {
+    {bool dis = false,
+    bool backBu = false,
+    appBarContent = "",
+    isSearching = false,
+    TextEditingController? searchController}) {
   return AppBar(
+    title: isSearching
+        ? TextField(
+            controller: searchController,
+            autofocus: false,
+            decoration: InputDecoration(
+              hintText: "Search ...",
+              border: InputBorder.none,
+              hintStyle: TextStyle(color: Colors.white30),
+            ),
+            style: TextStyle(color: Colors.white, fontSize: 16.0),
+            //onChanged: (query) => updateSearchQuery(query),
+          )
+        : Text(appBarContent),
     centerTitle: false,
     backgroundColor: HexColor('#252527'),
     elevation: 0,

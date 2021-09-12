@@ -27,20 +27,20 @@ class _ProfileState extends State<Profile> {
             children: [
               Column(
                 children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Icon(Icons.edit, color: Colors.white),
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        primary: Colors.blue,
-                        onPrimary: Colors.red,
-                      ),
-                    ),
-                  ),
+                  //Align(
+                  //  alignment: Alignment.topLeft,
+                  //  child: ElevatedButton(
+                  //    onPressed: () {},
+                  //    child: Icon(Icons.edit, color: Colors.white),
+                  //    style: ElevatedButton.styleFrom(
+                  //      shape: CircleBorder(),
+                  //      primary: Colors.blue,
+                  //      onPrimary: Colors.red,
+                  //    ),
+                  //  ),
+                  //),
                   SizedBox(
-                    height: 40,
+                    height: 30,
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(80),
@@ -86,23 +86,64 @@ class _ProfileState extends State<Profile> {
                 content: '2021/7/22 3:48 AM',
                 label: 'تاريخ التسجيل',
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 10, top: 20, bottom: 10),
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Delete Account',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      primary: HexColor('#FF5A5A'),
-                      onPrimary: Colors.red,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 20, bottom: 10),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Delete Account',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: HexColor('#FF5C49'),
+                          onPrimary: Colors.red,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              )
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, top: 20, bottom: 10),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Logout',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: HexColor('#FF5A5A'),
+                          onPrimary: Colors.red,
+                          padding: EdgeInsets.only(left: 35, right: 35),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, top: 20, bottom: 10),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Edit',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: HexColor('#4EC691'),
+                          onPrimary: Colors.red,
+                          padding: EdgeInsets.only(left: 45, right: 45),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

@@ -10,8 +10,10 @@ import 'package:weebe/pages/profile.dart';
 import 'package:weebe/pages/registration/login.dart';
 import 'package:weebe/pages/registration/register.dart';
 import 'package:weebe/pages/registration/welcome.dart';
+import 'package:weebe/pages/seasonsView.dart';
 import 'package:weebe/pages/sections.dart';
 import 'package:flutter/services.dart';
+import 'package:weebe/pages/seriesView.dart';
 
 void main() {
   // Disable Landscape mode
@@ -33,6 +35,8 @@ void main() {
       GetPage(name: '/moviesSec', page: () => Search()),
       GetPage(name: '/seriesSec', page: () => Sections()),
       GetPage(name: '/play', page: () => Play()),
+      GetPage(name: '/sView', page: () => seriesView()),
+      GetPage(name: '/sesView', page: () => seasonsView()),
     ],
   ));
 }

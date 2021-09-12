@@ -187,10 +187,20 @@ class _PlayState extends State<Play> {
                   ],
                 ),
               ),
+              Center(
+                  child: Container(
+                padding: EdgeInsets.only(bottom: 9, top: 40),
+                width: 330,
+                child: Divider(
+                  color: Colors.red[600],
+                  height: 1,
+                ),
+              )),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 10, right: 10),
+                    padding: EdgeInsets.only(right: 10),
                     child: Icon(
                       Icons.thumb_up,
                       color: Colors.white60,
@@ -204,7 +214,7 @@ class _PlayState extends State<Play> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 10, right: 10),
+                    padding: EdgeInsets.only(left: 35, right: 10),
                     child: Icon(
                       Icons.thumb_down,
                       color: Colors.white60,
@@ -218,22 +228,84 @@ class _PlayState extends State<Play> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 30, right: 10),
+                    padding: EdgeInsets.only(left: 35, right: 10),
                     child: Icon(
                       Icons.remove_red_eye_rounded,
                       color: Colors.white70,
                       size: 20,
                     ),
                   ),
-                  Text(
-                    "190.1K",
-                    style: TextStyle(
-                      color: Colors.white,
+                  Padding(
+                    padding: EdgeInsets.only(right: 35),
+                    child: Text(
+                      "190.1K",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   IMDB(rate: 8.6),
                 ],
-              )
+              ),
+              Center(
+                  child: Container(
+                padding: EdgeInsets.only(bottom: 40, top: 9),
+                width: 330,
+                child: Divider(
+                  color: Colors.red[600],
+                  height: 1,
+                ),
+              )),
+              // التاريخ
+              Padding(
+                padding: EdgeInsets.only(right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      "1999",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Cairo',
+                          fontSize: 19,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      " :  التاريخ",
+                      style: TextStyle(
+                          color: Colors.white54,
+                          fontFamily: 'Cairo',
+                          fontSize: 19,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              // الكاتب
+              Padding(
+                padding: EdgeInsets.only(right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      "Eiichiro Oda",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Cairo',
+                          fontSize: 19,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      " : الكاتب  ",
+                      style: TextStyle(
+                          color: Colors.white54,
+                          fontFamily: 'Cairo',
+                          fontSize: 19,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ));

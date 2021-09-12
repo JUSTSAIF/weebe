@@ -12,14 +12,14 @@ class SideMenu extends StatelessWidget {
           child: Column(
             children: <Widget>[
               SizedBox(
-                height: 65,
+                height: 100,
               ),
               ClipRRect(
                 borderRadius: BorderRadius.circular(80),
                 child: Image.asset(
                   'assets/testPro.gif',
-                  height: 100,
-                  width: 100,
+                  height: 120,
+                  width: 120,
                 ),
               ),
               SizedBox(
@@ -37,11 +37,8 @@ class SideMenu extends StatelessWidget {
               MenuBu(Icons.favorite, 'المفضلات'),
               MenuBu(Icons.subscriptions, 'الاشتراكات'),
               MenuBu(Icons.settings, 'الاعدادات'),
-              MenuBu(Icons.download, 'التحميلات'),
-              MenuBu(Icons.share, 'مشاركة التطيق'),
-              MenuBu(Icons.logout_outlined, 'تسجيل خروج'),
               SizedBox(
-                height: 70,
+                height: 100,
               ),
               Text(
                 'v0.1 Weebe',
