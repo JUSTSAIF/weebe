@@ -38,7 +38,7 @@ class _WelcomeState extends State<Welcome> {
             Padding(
               padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
               child: Text(
-                'أهلا بـك في ويـبي, باستخدام هذا التطبيق يمكنك الاستمتاع و مشاهدة ألأنمى بجودة عالية و بدون اي أعلانات',
+                'أهلا بـك في ويـبي, باستخدام هذا التطبيق يمكنك الاستمتاع و مشاهدة ألأنمى  بجودة عالية و بدون اي أعلانات',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 20,

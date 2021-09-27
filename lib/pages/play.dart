@@ -8,7 +8,10 @@ import 'package:weebe/widgets/bottomNav.dart';
 import 'package:weebe/widgets/imdb.dart';
 import 'package:weebe/widgets/myAppbar.dart';
 import 'package:weebe/widgets/sideMenu.dart';
-import 'package:weebe/widgets/starRating.dart';
+import 'package:subtitle_wrapper_package/subtitle_controller.dart';
+import 'package:subtitle_wrapper_package/subtitle_wrapper_package.dart';
+import 'package:subtitle_wrapper_package/data/models/style/subtitle_style.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 class Play extends StatefulWidget {
   const Play({
@@ -28,7 +31,6 @@ class _PlayState extends State<Play> {
   TargetPlatform _platform = TargetPlatform.windows;
   late VideoPlayerController _videoPlayerController;
   ChewieController? _chewieController;
-
   @override
   void initState() {
     super.initState();
@@ -44,8 +46,9 @@ class _PlayState extends State<Play> {
   }
 
   Future<void> initializePlayer() async {
-    _videoPlayerController = VideoPlayerController.network(
-        'https://cdn.shabakaty.com/mp4-1080/78CE3422-00B4-565B-5605-3926BDC3009F_video.mp4?response-content-disposition=attachment%3B%20filename%3D%22video.mp4%22&AWSAccessKeyId=RNA4592845GSJIHHTO9T&Expires=1627766161&Signature=%2FId6TF55cuybajxra%2F7vVd%2Fuzyg%3D');
+    // _videoPlayerController = VideoPlayerController.network("URL Link");
+    _videoPlayerController =
+        VideoPlayerController.asset("assets/onePieceEps_1.mp4"); // Local File
     await Future.wait([
       _videoPlayerController.initialize(),
     ]);
@@ -86,6 +89,12 @@ class _PlayState extends State<Play> {
   bool sub = false;
   bool fav = false;
 
+  final SubtitleController subtitleController = SubtitleController(
+    subtitleUrl:
+        "https://cdn.discordapp.com/attachments/701291550516314173/891985681197465630/OnePiece_01.srt",
+    subtitleType: SubtitleType.srt,
+  );
+
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _key = GlobalKey();
@@ -104,9 +113,20 @@ class _PlayState extends State<Play> {
                 child: _chewieController != null &&
                         _chewieController!
                             .videoPlayerController.value.isInitialized
-                    ? Chewie(
-                        controller: _chewieController!,
+                    ? SubTitleWrapper(
+                        videoPlayerController: _videoPlayerController,
+                        subtitleController: subtitleController,
+                        subtitleStyle: SubtitleStyle(
+                          textColor: Colors.white,
+                          hasBorder: true,
+                        ),
+                        videoChild: Chewie(
+                          controller: _chewieController!,
+                        ),
                       )
+                    // Chewie( // Run This Without SubTitles
+                    //     controller: _chewieController!,
+                    //   )
                     : Container(
                         color: Colors.black87,
                         child: Column(
