@@ -5,4 +5,4 @@
 
 # APP Screens :
 
-[appPic](https://github.com/JUSTSAIF/weebe/blob/master/main.gif?raw=true)
+<img src="https://github.com/JUSTSAIF/weebe/blob/master/main.gif?raw=true"/>
